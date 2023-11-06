@@ -1,0 +1,18 @@
+package com.example.products.model;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class Product {
+
+    private int id;
+    private String name;
+    private int cantidad;
+    private double precio;
+
+
+}
