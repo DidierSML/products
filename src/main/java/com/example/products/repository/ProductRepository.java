@@ -104,18 +104,18 @@ public class ProductRepository {
     }
 
     public String deleteById (Integer id){
-        products.removeIf(x -> x.getId() == id);
-        return null;
 
-        /*
         for (int i = 0; i < products.size();i++){
             if (products.get(i).getId() == id){
                 products.remove(i);
-                return null;
+                return "Producto eliminado exitosamente";
             }
         }
-        return null o el String que indique que el valor no se encontro.
-         */
-    }
+        return "No se encontro un producto con el Id especificado";
 
+    }
+/*
+        products.removeIf(x -> x.getId() == id);
+        return null;
+*/
 }
