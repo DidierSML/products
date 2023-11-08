@@ -30,7 +30,7 @@ public class ProductService {
 //    }
 
     public Product updateProduct (Integer id, Product updateProduct){
-        return productRepository.updateById(id,updateProduct);
+       return productRepository.updateById(id,updateProduct);
     }
     public String deleteProduct (Integer id){
         return productRepository.deleteById(id);

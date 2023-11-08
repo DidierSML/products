@@ -9,24 +9,15 @@ import java.util.List;
 @Repository
 public class ProductRepository {
 
-
+    //Lista Inicializada
     private List<Product> products = new ArrayList<>();
 
-    public void createProduct(){
-        products = List.of(
-                new Product(1,"Producto1",3,1000),
-                new Product(2,"Producto2",4,2000),
-                new Product(3,"Producto3",5,3000),
-                new Product(4,"Producto4",6,4000),
-                new Product(5,"Producto5",7,5000)
-        );
-
-    }
-
+    //Metodo obtener todos los productos
     public List<Product> getAllProducts (){
         return products;
     }
 
+    //Metodo obtener producto por Id
     public Product findById (int id){
         for (int i = 0; i < products.size();i++){
             if (products.get(i).getId() == id){
@@ -47,6 +38,7 @@ public class ProductRepository {
         }
          */
     }
+
 
     public List<Product> searchByName (String name){
 
@@ -79,18 +71,20 @@ public class ProductRepository {
          */
     }
 
+    //Metodo guardar Producto
     public Product save (Product p){
 
         Product product = new Product();
         product.setId(p.getId());
         product.setName(p.getName());
-        product.setCantidad(p.getCantidad());
-        product.setPrecio(p.getPrecio());
+        product.setQuantity(p.getQuantity());
+        product.setCost(p.getCost());
 
         products.add(product);
         return product;
     }
 
+    //Metodo actualizar Producto
     public Product updateById(Integer id, Product updateProduct){
         for (int i = 0; i < products.size(); i++){
             if (products.get(i).getId() == id){
@@ -103,6 +97,7 @@ public class ProductRepository {
         return null;
     }
 
+    //Metodo Eliminar Producto
     public String deleteById (Integer id){
 
         for (int i = 0; i < products.size();i++){

@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/Products")
+@RequestMapping("/apiProducts")
 @AllArgsConstructor
 public class ProductController {
 
@@ -33,14 +33,14 @@ public class ProductController {
         return productService.findProductById(id);
     }
 
-    @PutMapping("updateProduct/{id}")
+    @PutMapping("updateProductById/{id}")
     @ResponseStatus(HttpStatus.OK)
     public Product updateProduct (@PathVariable Integer id, @RequestBody Product product){
         return productService.updateProduct(id,product);
     }
 
-    @DeleteMapping("deleteProduct/{id}")
-    @ResponseStatus(HttpStatus.NO_CONTENT)
+    @DeleteMapping("deleteProductById/{id}")
+    @ResponseStatus(HttpStatus.NOT_FOUND)
     public String deleteProduct (@PathVariable Integer id){
         return productService.deleteProduct(id);
     }
