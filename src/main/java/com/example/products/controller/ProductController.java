@@ -39,11 +39,22 @@ public class ProductController {
         return productService.updateProduct(id,product);
     }
 
+    @GetMapping("searchByName") //Metodo donde buscaremos a través del @RequestParam
+    @ResponseStatus(HttpStatus.OK)
+    public List <Product> searchByName (@RequestParam String name){
+        return productService.searchByName(name);
+    }
+
     @DeleteMapping("deleteProductById/{id}")
     @ResponseStatus(HttpStatus.NOT_FOUND)
     public String deleteProduct (@PathVariable Integer id){
         return productService.deleteProduct(id);
     }
+
+    /*
+        Cuando usamos NO_CONTENT, esta configuracion evita que se muetre por pantalla
+        cualquier mensaje, así haya sido previamente asignado en la lógica.
+     */
 
 
 

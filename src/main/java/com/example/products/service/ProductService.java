@@ -25,9 +25,9 @@ public class ProductService {
         return productRepository.findById(id);
     }
 
-//    public Product searchById (String name){
-//        return productRepository.searchByName(name);
-//    }
+    public List <Product> searchByName (String name){
+        return productRepository.searchByName(name);
+    }
 
     public Product updateProduct (Integer id, Product updateProduct){
        return productRepository.updateById(id,updateProduct);
