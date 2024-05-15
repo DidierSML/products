@@ -12,12 +12,12 @@ public class ProductRepository {
     //Lista Inicializada
     private List<Product> products = new ArrayList<>();
 
-    //Metodo obtener todos los productos
+    //Método obtener todos los productos
     public List<Product> getAllProducts (){
         return products;
     }
 
-    //Metodo obtener producto por Id
+    //Método obtener producto por Id
     public Product findById (int id){
         for (int i = 0; i < products.size();i++){
             if (products.get(i).getId() == id){
@@ -71,7 +71,7 @@ public class ProductRepository {
          */
     }
 
-    //Metodo guardar Producto
+    //Método guardar Producto
     public Product save (Product p){
 
         Product product = new Product();
@@ -84,7 +84,7 @@ public class ProductRepository {
         return product;
     }
 
-    //Metodo actualizar Producto
+    //Método actualizar Producto
     public Product updateById(Integer id, Product updateProduct){
         for (int i = 0; i < products.size(); i++){
             if (products.get(i).getId() == id){
@@ -97,7 +97,7 @@ public class ProductRepository {
         return null;
     }
 
-    //Metodo Eliminar Producto
+    //Método Eliminar Producto
     public String deleteById (Integer id){
 
         for (int i = 0; i < products.size();i++){
